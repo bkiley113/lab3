@@ -21,7 +21,8 @@ struct hash_table_entry {
 
 struct hash_table_v1 {
 	struct hash_table_entry entries[HASH_TABLE_CAPACITY];
-	//add a global mutex
+	//add a global mutex, lock the whole thing since we don't care about performance
+	//only correctness!
 	pthread_mutex_t mutex;
 };
 
